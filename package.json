@@ -1,11 +1,11 @@
 {
   "name": "auth0TestBack",
   "version": "1.0.0",
-  "description": "",
+  "description": "This repository has starter code to begin work on creating your own online bookshelf.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,16 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "jwks-rsa": "^2.0.3"
-  }
+    "jwks-rsa": "^2.0.3",
+    "mongoose": "^5.13.7"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ali-coder1996/can-of-books-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ali-coder1996/can-of-books-backend/issues"
+  },
+  "homepage": "https://github.com/Ali-coder1996/can-of-books-backend#readme"
 }
