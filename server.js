@@ -91,8 +91,9 @@ app.post('/book-creation', (req, res) => {
 
 app.delete('/book-delete/:id', (req, res) => {
   let index = Number(req.params.id);
-  let email = req.query.email
-  console.log(email)
+  let {email}=req.query
+  console.log(req.params.id)
+
   myUserModel.find({ email: email }, (error, item) => {
     if (error) {
       res.send('we have error')
@@ -110,6 +111,25 @@ app.delete('/book-delete/:id', (req, res) => {
   })
 })
 
+app.put('/book-updata/:id', (req, res) => {
+  console.log(req.params)
+  let index = Number(req.params.id);
+  let { email, bookTitle, bookDescription, bookStatus } = req.body;
+  myUserModel.find({ email: email }, (error, item) => {
+    if (error) {
+      res.send('we have error')
+    } else {
+      
+      item[0].book.splice(index,1,{
+        title:bookTitle,
+        description:bookDescription,
+        status:bookStatus
+      })
+      item[0].save()
+      res.json(item[0].book)
+    }
+  })
+})
 
 
 
